@@ -16,7 +16,7 @@ int main()
     caracter1 = palabra.front();
     caracter2 = palabra.back();
 
-    if (caracter1 = caracter2)
+    if (caracter1 == caracter2)
     {
         cout << "Su palabra da inicio y finaliza con la misma letra" << endl;
     }
