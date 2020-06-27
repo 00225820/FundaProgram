@@ -1,0 +1,65 @@
+#include <iostream>
+#include <stdio.h>
+#include <string.h>
+using namespace std;
+
+
+int murcielago(char p_oracion[], char s_oracion[]) //funcion para definir el numero por la letra que queremos que se sustituya
+{ 
+  int i, cantidad;
+  cantidad = strlen(p_oracion); // Strenght Lenght, utilizado para guardar la longitud de la frase
+  for (int i = 0; i < cantidad; i++)
+   {   
+     switch (p_oracion[i])
+        {
+          case 'm' :
+          s_oracion[i] = '0';
+          break;
+          case 'u' :
+          s_oracion[i] = '1';
+          break;
+          case 'r' :
+          s_oracion[i] = '2';
+          break;
+          case 'c' :
+          s_oracion[i] = '3';
+          break;
+          case 'i' :
+          s_oracion[i] = '4';
+          break;
+          case 'e' :
+          s_oracion[i] = '5';
+          break;
+          case 'l' :
+          s_oracion[i] = '6';
+          break;
+          case 'a' :
+          s_oracion[i] = '7';
+          break;
+          case 'g' :
+          s_oracion[i] = '8';
+          break;
+          case 'o' :
+          s_oracion[i] = '9';
+          break;
+          default:
+          s_oracion[i] = p_oracion[i];
+          break;
+        }
+        
+    }
+    cout << "Su oracion en clave murcielago es: ";
+    cout << s_oracion << endl;
+    return 0;
+}
+
+
+int main()
+{
+  char primera_oracion[1000], segunda_oracion[100];
+  cout << "PROGRAMA PARA REEMPLAZAR UNA FRASE NORMAL Y CONVERTIRLA EN CLAVE MURCIELAGO" << endl;
+  cout << "Digite la frase que quiera:" << endl;
+  cin.getline(primera_oracion,1000);
+  murcielago(primera_oracion, segunda_oracion);
+
+}
