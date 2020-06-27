@@ -1,0 +1,58 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+void Matriz();
+void Notas();
+float n[25][5];
+
+
+
+int ALUMNOS;
+
+void Matriz()
+{
+    cout << "A continuación, digite la cantidad de alumnos: ";
+    cin >> ALUMNOS;
+    cout << endl;
+    for (int i = 0; i < ALUMNOS; i++)
+    {
+        cout << "Estudiante " << i << endl;
+        for (int j = 0; j < 5; j++)
+        {
+            cout << "Ingrese la nota " << j <<": ";
+            cin >> n[i][j];
+        }
+        cout << endl;
+    }
+    Notas();
+}
+
+void Notas()
+{
+    float TNot = 0, Prom = 0;
+    for (int i = 0; i < ALUMNOS; i++)
+    {
+        for (int j = 0; j < 5; j++)
+        {
+            TNot = TNot + n[i][j];
+        }
+        Prom = (TNot * 0.20);
+        if (Prom >= 6)
+        {
+            cout << "Estudiante " << i << " FELICIDADES, Aprobaste con un promedio de: " << Prom << endl;
+            TNot = 0, Prom = 0;
+        }
+        else
+        {
+            cout << "Estudiante " << i << " Lastima:(, haz reprobado con un promedio de: " << Prom << endl;
+            TNot = 0, Prom = 0;
+        }  
+    }
+}
+int main()
+{
+    Matriz();
+    return 0;
+}
