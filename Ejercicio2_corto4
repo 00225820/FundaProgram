@@ -7,7 +7,7 @@ int med(float estaturas[])
     float suma; 
     int i;
     suma = 0;
-    for (int i=1; i<=25; i++){
+    for (int i=0; i<25; i++){
         suma += estaturas[i];
     }
     media = suma / 25;
@@ -16,13 +16,13 @@ int med(float estaturas[])
 }
 void discriminante(float estaturas[], float media, int *mas_delamedia, int *menos_delamedia)
 {
-    for (int i=1; i<=25; i++) 
+    for (int i=0; i<25; i++) 
     {
         if (estaturas[i] > media)
         {
             *mas_delamedia += 1;
         }
-        else if (estaturas[i] < media)
+        else 
         {
             *menos_delamedia += 1;
         }
@@ -37,9 +37,9 @@ int main()
     int mas_delamedia = 0, menos_delamedia = 0;
     cout<<"Bienvenid@ al programa para promediar las alturas de sus estudiantes"<< endl;
     cout << "Por favor colocar las alturas de 25 estudiantes" << endl;
-    for (int i=1; i<=25; i++)
+    for (int i=0; i<25; i++)
     {
-        cout<<"Digite la altura de su estudiante numero ["<<i<<"]: "<<endl;
+        cout<<"Digite la estatura de su estudiante numero ["<<i+1<<"]: "<<endl;
         cin>>estaturas[i];
     }
     media = med(estaturas);
